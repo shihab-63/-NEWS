@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BBC Bangla | Home</title>
+    <!-- Daisy UI & Tailwind Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts Bangla & English Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awsome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        font-family: "Noto Serif Bengali", serif;
+      }
+      .font-inter {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="bg-teal-900">
+      <nav class="p-4 relative md:static">
+        <div class="md:w-8/12 mx-auto flex justify-between items-center">
+          <div class="flex gap-3 items-center">
+            <div class="inline-grid text-3xl *:[grid-area:1/1]">
+              <i class="fa-solid fa-earth-americas text-[#eb4d4b]"></i>
+              <i
+                class="fa-solid fa-earth-americas text-[#eb4d4b] animate-ping"
+              ></i>
+            </div>
+            <h1 class="text-white font-bold text-2xl md:text-3xl">
+              চাঁন্দাবাজ |
+              <span class="font-inter text-xl md:text-2xl text-yellow-400"
+                >NEWS</span
+              >
+            </h1>
+          </div>
+
+          <button id="menu-btn" class="text-white md:hidden focus:outline-none">
+            <i class="fa-solid fa-bars text-2xl"></i>
+          </button>
+
+          <!-- Desktop View -->
+          <ul
+            id="categorie-Container"
+            class="hidden md:flex gap-6 text-white"
+          ></ul>
+        </div>
+
+        <!-- Mobile View -->
+        <div
+          id="mobile-menu"
+          class="absolute w-1/2 right-2 top-13 text-center md:static hidden md:hidden mt-4 bg-teal-900/70 backdrop-blur rounded-lg p-4"
+        >
+          <ul id="dropdown-menu" class="flex flex-col gap-4 text-white"></ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- News Section -->
+      <section
+        class="my-10 md:w-8/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 px-5"
+        id="newsContainer"
+      >
+        <div class="col-span-full text-center" id="loading-container">
+          <span class="loading loading-dots w-20 font-normal"></span>
+        </div>
+      </section>
+
+      <!-- Modal -->
+      <!-- Open the modal using ID.showModal() method -->
+      <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+      <!-- <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="modalContainer">
+            
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog> -->
+
+      <!-- You can open the modal using ID.showModal() method -->
+      <dialog id="my_modal_5" class="modal md:w-full">
+        <div class="modal-box bg-gray-200 md:w-11/12 md:max-w-5xl">
+          <form method="dialog">
+            <button
+              class="btn btn-sm bg-red-500 active:scale-95 p-1 text-white btn-circle btn-ghost absolute right-2 top-2"
+            >
+              ✕
+            </button>
+
+            <div id="modalContainer" class="md:p-5"></div>
+          </form>
+        </div>
+      </dialog>
+    </main>
+
+    <!-- JavaScript Link Here -->
+    <script src="./script/main.js"></script>
+  </body>
+</html>
